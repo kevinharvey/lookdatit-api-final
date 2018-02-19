@@ -1,0 +1,5 @@
+Django~=2.0
+
+djangorestframework~=3.7
+
+model-mommy~=1.5
