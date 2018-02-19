@@ -34,8 +34,8 @@ GET /submissions/
 {
   'rows': [
     {
-      'url': 'https://api.redthat.com/sumbmissions/1/'
-      'title': 'List of HTTP Status Code'
+      'url': 'https://api.redthat.com/sumbmissions/1/',
+      'title': 'List of HTTP Status Code',
       'external_link': 'https://en.wikipedia.org/wiki/List_of_HTTP_status_codes',
       'upvotes': 0,
       'downvotes': 0
@@ -61,8 +61,8 @@ POST /submissions/
 201 Created
 
 {
-  'url': 'https://api.redthat.com/submissions/2/'
-  'title': 'Serializers - Django REST Framework'
+  'url': 'https://api.redthat.com/submissions/2/',
+  'title': 'Serializers - Django REST Framework',
   'external_link': 'http://www.django-rest-framework.org/api-guide/serializers',
   'upvotes': 0,
   'downvotes': 0
@@ -85,8 +85,8 @@ PATCH /submissions/1/
 200 OK
 
 {
-  'url': 'https://api.redthat.com/submissions/1/'
-  'title': 'List of HTTP Status Codes from Wikipedia' # updated
+  'url': 'https://api.redthat.com/submissions/1/',
+  'title': 'List of HTTP Status Codes from Wikipedia', # updated
   'external_link': 'https://en.wikipedia.org/wiki/List_of_HTTP_status_codes',
   'upvotes': 0,
   'downvotes': 0
@@ -105,8 +105,8 @@ POST /submission/1/upvote/
 201 Created
 
 {
-  'url': 'https://api.redthat.com/submissions/1/'
-  'title': 'List of HTTP Status Codes from Wikipedia' # updated
+  'url': 'https://api.redthat.com/submissions/1/',
+  'title': 'List of HTTP Status Codes from Wikipedia', # updated
   'external_link': 'https://en.wikipedia.org/wiki/List_of_HTTP_status_codes',
   'upvotes': 1, # incremented
   'downvotes': 0
@@ -125,8 +125,8 @@ POST /submission/1/downvote/
 201 Created
 
 {
-  'url': 'https://api.redthat.com/submissions/1/'
-  'title': 'List of HTTP Status Codes from Wikipedia' # updated
+  'url': 'https://api.redthat.com/submissions/1/',
+  'title': 'List of HTTP Status Codes from Wikipedia', # updated
   'external_link': 'https://en.wikipedia.org/wiki/List_of_HTTP_status_codes',
   'upvotes': 0,
   'downvotes': 1 # incremented
