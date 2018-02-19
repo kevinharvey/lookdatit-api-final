@@ -27,12 +27,17 @@ GET /submissions/1/
 GET /submissions/
 ```
 
+A paginated list of all submissions in the database
+
 #### Response
 ```
 200 OK
 
 {
-  'rows': [
+  'count': 1,
+  'next': null, # the URL for the next page of results
+  'previous': null, # the URL for the previous page of results
+  'results': [
     {
       'url': 'https://api.redthat.com/sumbmissions/1/',
       'title': 'List of HTTP Status Code',
