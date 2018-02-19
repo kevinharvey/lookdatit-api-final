@@ -2,7 +2,7 @@
 The API provides the following endpoints:
 
 
-## List All Submissions
+### List All Submissions
 ```
 GET /submissions/
 ```
@@ -24,6 +24,7 @@ GET /submissions/
   ]
 }
 ```
+---
 
 
 ### Get a Single Submission
@@ -43,6 +44,7 @@ GET /submissions/1/
   'downvotes': 0
 }
 ```
+---
 
 
 ### Create a New Submission
@@ -66,6 +68,8 @@ POST /submissions/
   'downvotes': 0
 }
 ```
+---
+
 
 ### Edit an Existing Submission
 ```
@@ -88,6 +92,8 @@ PATCH /submissions/1/
   'downvotes': 0
 }
 ```
+---
+
 
 ### Upvote an Existing Submission
 ```
@@ -106,6 +112,7 @@ POST /submission/1/upvote/
   'downvotes': 0
 }
 ```
+---
 
 
 ### Downvote an Existing Submission
