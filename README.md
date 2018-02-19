@@ -2,6 +2,26 @@
 The API provides the following endpoints:
 
 
+### Get a Single Submission
+```
+GET /submissions/1/
+```
+
+#### Response
+```
+200 OK
+
+{
+  'url': 'https://api.redthat.com/submissions/1/'
+  'title': 'List of HTTP Status Codes'
+  'external_link': 'https://en.wikipedia.org/wiki/List_of_HTTP_status_codes',
+  'upvotes': 0,
+  'downvotes': 0
+}
+```
+---
+
+
 ### List All Submissions
 ```
 GET /submissions/
@@ -22,26 +42,6 @@ GET /submissions/
     },
     ...
   ]
-}
-```
----
-
-
-### Get a Single Submission
-```
-GET /submissions/1/
-```
-
-#### Response
-```
-200 OK
-
-{
-  'url': 'https://api.redthat.com/submissions/1/'
-  'title': 'List of HTTP Status Codes'
-  'external_link': 'https://en.wikipedia.org/wiki/List_of_HTTP_status_codes',
-  'upvotes': 0,
-  'downvotes': 0
 }
 ```
 ---
