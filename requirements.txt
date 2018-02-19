@@ -1,5 +1,5 @@
 Django~=2.0
-
 djangorestframework~=3.7
-
 model-mommy~=1.5
+requests~=2.18
+beautifulsoup4~=4.6.0

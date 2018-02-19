@@ -1,10 +1,8 @@
-# redthat-api-final
-RedThat, a place to share stuff you read.
+# The ReadThat API
+The API provides the following endpoints:
 
-## The API
-The RedThat API provides the following endpoints:
 
-### Listing All Submissions
+## List All Submissions
 ```
 GET /submissions/
 ```
@@ -27,7 +25,8 @@ GET /submissions/
 }
 ```
 
-### Getting a Single Submission
+
+### Get a Single Submission
 ```
 GET /submissions/1/
 ```
@@ -45,7 +44,8 @@ GET /submissions/1/
 }
 ```
 
-### Creating a New Submission
+
+### Create a New Submission
 ```
 POST /submissions/
 
@@ -67,7 +67,7 @@ POST /submissions/
 }
 ```
 
-### Editing an Existing Submission
+### Edit an Existing Submission
 ```
 PATCH /submissions/1/
 
@@ -89,7 +89,7 @@ PATCH /submissions/1/
 }
 ```
 
-### Upvoting an Existing Submission
+### Upvote an Existing Submission
 ```
 POST /submission/1/upvote/
 ```
@@ -108,7 +108,7 @@ POST /submission/1/upvote/
 ```
 
 
-### Downvoting an Existing Submission
+### Downvote an Existing Submission
 ```
 POST /submission/1/downvote/
 ```
