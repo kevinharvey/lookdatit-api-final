@@ -77,31 +77,6 @@ Authorization:Token <token>
 ---
 
 
-### Edit an Existing Submission
-```
-PATCH /submissions/1/
-Authorization:Token <token>
-
-{
-  'title': 'List of HTTP Status Codes from Wikipedia'
-}
-```
-
-#### Response
-```
-200 OK
-
-{
-  'url': 'https://api.redthat.com/submissions/1/',
-  'title': 'List of HTTP Status Codes from Wikipedia', # updated
-  'external_link': 'https://en.wikipedia.org/wiki/List_of_HTTP_status_codes',
-  'upvotes': 0,
-  'downvotes': 0
-}
-```
----
-
-
 ### Upvote an Existing Submission
 ```
 POST /submission/1/upvote/

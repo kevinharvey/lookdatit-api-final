@@ -1,4 +1,9 @@
+from unittest import mock
+
+from django.conf import settings
+
 from rest_framework.test import APITestCase, APIClient
+from rest_framework.authtoken.models import Token
 
 from model_mommy import mommy
 
@@ -48,3 +53,55 @@ class SubmissionsAPITestCase(APITestCase):
                 }
             ]
         })
+
+    def test_unauthenticated(self):
+        """
+        Test all unauthenticated interactions with the Submissions endpoint
+        """
+        list_endpoint = '/submissions/'
+        detail_endpoint = '/submissions/1/'
+
+        self.assertEqual(self.client.get(list_endpoint).status_code, 200)
+        self.assertEqual(self.client.post(list_endpoint).status_code, 401)
+        self.assertEqual(self.client.put(list_endpoint).status_code, 401)
+        self.assertEqual(self.client.patch(list_endpoint).status_code, 401)
+        self.assertEqual(self.client.delete(list_endpoint).status_code, 401)
+        self.assertEqual(self.client.head(list_endpoint).status_code, 200)
+        self.assertEqual(self.client.options(list_endpoint).status_code, 200)
+
+        self.assertEqual(self.client.get(detail_endpoint).status_code, 200)
+        self.assertEqual(self.client.post(detail_endpoint).status_code, 401)
+        self.assertEqual(self.client.put(detail_endpoint).status_code, 401)
+        self.assertEqual(self.client.patch(detail_endpoint).status_code, 401)
+        self.assertEqual(self.client.delete(detail_endpoint).status_code, 401)
+        self.assertEqual(self.client.head(detail_endpoint).status_code, 200)
+        self.assertEqual(self.client.options(detail_endpoint).status_code, 200)
+
+    @mock.patch('requests.get')
+    def test_authenticated(self, mock_get):
+        """
+        Test all authenticated interactions with the Submissions endpoint
+        """
+        mock_get.return_value.content = '<title>Moby Dick</title>'
+        list_endpoint = '/submissions/'
+        detail_endpoint = '/submissions/1/'
+        token = mommy.make(Token)
+        self.client.credentials(HTTP_AUTHORIZATION=f'Token {token.key}')
+
+        self.assertEqual(self.client.get(list_endpoint).status_code, 200)
+        self.assertEqual(self.client.post(list_endpoint, {
+            'external_link': 'http://example.com/logged/in/'
+        }).status_code, 201)
+        self.assertEqual(self.client.put(list_endpoint).status_code, 405)
+        self.assertEqual(self.client.patch(list_endpoint).status_code, 405)
+        self.assertEqual(self.client.delete(list_endpoint).status_code, 405)
+        self.assertEqual(self.client.head(list_endpoint).status_code, 200)
+        self.assertEqual(self.client.options(list_endpoint).status_code, 200)
+
+        self.assertEqual(self.client.get(detail_endpoint).status_code, 200)
+        self.assertEqual(self.client.post(detail_endpoint).status_code, 405)
+        self.assertEqual(self.client.put(detail_endpoint).status_code, 405)
+        self.assertEqual(self.client.patch(detail_endpoint).status_code, 405)
+        self.assertEqual(self.client.delete(detail_endpoint).status_code, 405)
+        self.assertEqual(self.client.head(detail_endpoint).status_code, 200)
+        self.assertEqual(self.client.options(detail_endpoint).status_code, 200)
