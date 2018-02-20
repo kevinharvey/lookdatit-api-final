@@ -12,6 +12,6 @@ class SubmissionSerializer(serializers.HyperlinkedModelSerializer):
         )
 
 
-class SubmissionViewSet(mixins.RetrieveModelMixin, viewsets.GenericViewSet):
+class SubmissionViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
     queryset = Submission.objects.all()
     serializer_class = SubmissionSerializer
