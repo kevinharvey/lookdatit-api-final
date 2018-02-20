@@ -55,6 +55,7 @@ A paginated list of all submissions in the database
 ### Create a New Submission
 ```
 POST /submissions/
+Authorization:Token <token>
 
 {
   'external_link': 'http://www.django-rest-framework.org/api-guide/serializers'
@@ -79,6 +80,7 @@ POST /submissions/
 ### Edit an Existing Submission
 ```
 PATCH /submissions/1/
+Authorization:Token <token>
 
 {
   'title': 'List of HTTP Status Codes from Wikipedia'
@@ -103,6 +105,7 @@ PATCH /submissions/1/
 ### Upvote an Existing Submission
 ```
 POST /submission/1/upvote/
+Authorization:Token <token>
 ```
 
 #### Response
@@ -123,6 +126,7 @@ POST /submission/1/upvote/
 ### Downvote an Existing Submission
 ```
 POST /submission/1/downvote/
+Authorization:Token <token>
 ```
 
 #### Response
