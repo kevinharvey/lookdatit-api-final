@@ -1,4 +1,4 @@
-# The ReadThat API
+# The Redthat API
 The API provides the following endpoints:
 
 
@@ -72,6 +72,26 @@ Authorization: Token <token>
   'external_link': 'http://www.django-rest-framework.org/api-guide/serializers',
   'upvotes': 0,
   'downvotes': 0
+}
+```
+---
+
+
+### Get a Token
+```
+POST /get-token/
+
+{
+  'email': 'username@example.com'
+}
+```
+
+#### Response
+```
+201 Created (or 200 OK if it already existed)
+
+{
+  'token': 'abc123',
 }
 ```
 ---
